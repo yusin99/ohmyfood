@@ -57,8 +57,8 @@ footer {
   display: flex;
   gap: 10px;
   justify-content: end;
-  align-items: center;
-  flex-direction: row-reverse;
+  align-items: start;
+  flex-direction: column;
   background-color: #353535;
   margin: 0;
   border: 0;
@@ -75,12 +75,13 @@ footer a {
   color: white;
 }
 footer ul {
+  flex-direction: column;
+  align-items: start;
+  gap: 5px;
   list-style-type: none;
   display: flex;
   list-style-type: none;
   justify-content: center;
-  align-items: center;
-  gap: 10px;
 }
 footer ul li {
   padding: 5px 0 5px 0;
@@ -306,28 +307,15 @@ footer ul li {
   padding-right: 1em;
 }
 
-.loader__fork {
-  vertical-align: middle;
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, 50%);
-  animation: rotate 1s linear infinite;
-}
-
-.loader__food span:nth-child(1), .loader__food span:nth-child(2), .loader__food span:nth-child(3), .loader__food span:nth-child(4), .loader__food span:nth-child(5), .loader__food span:nth-child(6), .loader__food span:nth-child(7), .loader__food span:nth-child(8), .loader__food span:nth-child(9), .loader__food span:nth-child(10), .loader__food span:nth-child(11) {
-  animation: grow 1s ease-in-out 0.15s infinite;
-}
-
 .main_menu {
   background-color: #f6f6f6;
   border-top-left-radius: 25px;
   border-top-right-radius: 25px;
-  width: 80%;
+  width: 100%;
   position: relative;
   margin-top: -50px;
-  margin-left: auto;
-  margin-right: auto;
+  margin-left: 0;
+  margin-right: 0;
 }
 
 .menu_full {
@@ -646,24 +634,6 @@ footer ul li {
   margin-left: 20px;
 }
 
-@keyframes grow {
-  0%, 100% {
-    -webkit-transform: scaleY(1);
-    transform: scaleY(1);
-  }
-  50% {
-    -webkit-transform: scaleY(1.8);
-    transform: scaleY(1.8);
-  }
-}
-@keyframes rotate {
-  from {
-    -webkit-transform: rotate(0deg);
-  }
-  to {
-    -webkit-transform: rotate(360deg);
-  }
-}
 @keyframes loader {
   0% {
     opacity: 1;
@@ -711,6 +681,11 @@ footer ul li {
   }
 }
 @media screen and (min-width: 768px) {
+  .main_menu {
+    width: 80%;
+    margin-left: auto;
+    margin-right: auto;
+  }
   .loader__food {
     top: 50%;
     left: 50%;
@@ -735,21 +710,14 @@ footer ul li {
     text-align: center;
     gap: 30px;
   }
-}
-@media screen and (max-width: 768px) {
-  .main_menu {
-    width: 100%;
-    margin-left: 0;
-    margin-right: 0;
-  }
   footer {
-    flex-direction: column;
-    align-items: start;
+    align-items: center;
+    flex-direction: row-reverse;
   }
   footer ul {
-    flex-direction: column;
-    align-items: start;
-    gap: 5px;
+    flex-direction: row;
+    align-items: center;
+    gap: 10px;
   }
 }
 @media screen and (min-width: 1280px) {
