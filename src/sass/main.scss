@@ -417,7 +417,7 @@ $gradient-colors: #9356dc, #b35cdc, #cf64dc, #e86edb, #ff79da;
     position: relative;
     cursor: pointer;
 }
-.heart_section{
+.heart_section {
     position: absolute;
     bottom: 20px;
     right: 19px;
@@ -687,12 +687,12 @@ $gradient-colors: #9356dc, #b35cdc, #cf64dc, #e86edb, #ff79da;
 }
 @keyframes reverse-fill {
     0% {
-      background-size: 100% 100%, 100% 100%;
+        background-size: 100% 100%, 100% 100%;
     }
     100% {
-      background-size: 0% 100%, 0% 0%;
+        background-size: 0% 100%, 0% 0%;
     }
-  }
+}
 
 // Media queries Desktop/Tablet //
 
@@ -776,4 +776,3 @@ $gradient-colors: #9356dc, #b35cdc, #cf64dc, #e86edb, #ff79da;
         }
     }
 }
-
