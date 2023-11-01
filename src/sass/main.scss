@@ -417,7 +417,11 @@ $gradient-colors: #9356dc, #b35cdc, #cf64dc, #e86edb, #ff79da;
     position: relative;
     cursor: pointer;
 }
-
+.heart_section{
+    position: absolute;
+    bottom: 20px;
+    right: 19px;
+}
 .hidden-checkbox:checked + .custom-checkbox i.fill {
     background-image: linear-gradient(to left, #{$gradient-colors}),
         linear-gradient(to bottom, white, white);
