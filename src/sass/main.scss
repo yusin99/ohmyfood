@@ -422,43 +422,19 @@ $gradient-colors: #9356dc, #b35cdc, #cf64dc, #e86edb, #ff79da;
     bottom: 20px;
     right: 19px;
 }
+
 .hidden-checkbox:checked + .custom-checkbox i.fill {
+    animation: fill 0.5s ease;
     background-image: linear-gradient(to left, #{$gradient-colors}),
         linear-gradient(to bottom, white, white);
     background-repeat: no-repeat;
     -webkit-text-fill-color: transparent;
     -webkit-background-clip: text;
     font-weight: bold;
-    &:hover {
-        &::before {
-        }
-        animation: pulsation 0.6s 0.3s infinite;
-        background-image: linear-gradient(to left, #{$gradient-colors}),
-            linear-gradient(to bottom, white, white);
-        background-repeat: no-repeat;
-        -webkit-text-fill-color: transparent;
-        -webkit-background-clip: text;
-        font-weight: bold;
-    }
 }
+
 .fill {
     color: black;
-    cursor: pointer;
-    font-size: 22px;
-    position: relative;
-    z-index: 3;
-
-    &:hover {
-        &::before {
-        }
-        animation: fill 0.5s ease, pulsation 0.6s 0.3s infinite;
-        background-image: linear-gradient(to left, #{$gradient-colors}),
-            linear-gradient(to bottom, white, white);
-        background-repeat: no-repeat;
-        color: transparent;
-        -webkit-background-clip: text;
-        font-weight: bold;
-    }
 }
 .fa-heart:before {
     font-size: 22px;
@@ -709,6 +685,14 @@ $gradient-colors: #9356dc, #b35cdc, #cf64dc, #e86edb, #ff79da;
         background-size: 100% 100%, 100% 100%;
     }
 }
+@keyframes reverse-fill {
+    0% {
+      background-size: 100% 100%, 100% 100%;
+    }
+    100% {
+      background-size: 0% 100%, 0% 0%;
+    }
+  }
 
 // Media queries Desktop/Tablet //
 
@@ -777,6 +761,19 @@ $gradient-colors: #9356dc, #b35cdc, #cf64dc, #e86edb, #ff79da;
 
     .restaurants {
         padding: 0 180px;
+    }
+    .hidden-checkbox + .custom-checkbox i.fill {
+        &:hover {
+            &::before {
+                animation: fill 0.5s ease;
+                background-image: linear-gradient(to left, #{$gradient-colors}),
+                    linear-gradient(to bottom, white, white);
+                background-repeat: no-repeat;
+                -webkit-text-fill-color: transparent;
+                -webkit-background-clip: text;
+                font-weight: bold;
+            }
+        }
     }
 }
 
